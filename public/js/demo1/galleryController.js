@@ -1,9 +1,8 @@
 import { gsap } from 'gsap';
-import { calcWinsize, getRandomInteger } from '../utils';
+import { calcWinsize } from '../utils';
 import GalleryItem from './galleryItem';
 import LocomotiveScroll from 'locomotive-scroll';
 import Splitting from "splitting";
-import { auto } from '@popperjs/core';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Call the splittingjs to transform the data-splitting texts to spans of chars 

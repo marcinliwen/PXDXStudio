@@ -1,5 +1,6 @@
 // Map number x from range [a, b] to [c, d]
-const imagesLoaded = require('imagesloaded');
+import imagesLoaded from 'imagesloaded';
+// const imagesLoaded = require('imagesloaded');
 
 // Linear interpolation
 const lerp = (a, b, n) => (1 - n) * a + n * b;
