@@ -18,6 +18,6 @@ router.get('/',function(req,res){
 
 //add the router
 app.use('/', router);
-app.listen(process.env.port || 80);
+app.listen(process.env.port || 3000);
 
 console.log('Running server');
