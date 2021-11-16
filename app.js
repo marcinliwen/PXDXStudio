@@ -1,13 +1,15 @@
-// const express = require('express');
-import express from 'express';
+const express = require('express');
 const app = express();
-import path from 'path';
-// const path = require('path');
+const path = require('path');
 const router = express.Router();
 
-const __dirname = path.resolve().toString();
+app.use(express.static('./'));
+app.use('.src/', express.static('./'));
 
-app.use(express.static('public'))
+router.get('*.html',function(req,res){
+    res.sendFile(`src${req.originalUrl}`, { root: __dirname });
+    //__dirname : It will resolve to your project folder.
+});
 
 router.get('/',function(req,res){
     res.sendFile('src/index.html', { root: __dirname });

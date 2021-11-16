@@ -1,7 +1,7 @@
-import LocomotiveScroll from 'locomotive-scroll';
+// import LocomotiveScroll from '../../node_modules/locomotive-scroll/dist/locomotive-scroll.min.js';
 
 // Map number x from range [a, b] to [c, d]
-const imagesLoaded = require('imagesloaded');
+// import { imagesLoaded } from '../../node_modules/imagesloaded/imagesloaded.pkgd.js';
 
 // Preload images
 const preloadImages = (selector = 'img') => {

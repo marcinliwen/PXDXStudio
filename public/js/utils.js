@@ -1,5 +1,5 @@
 // Map number x from range [a, b] to [c, d]
-import imagesLoaded from 'imagesloaded';
+// import { imagesLoaded } from '../../node_modules/imagesloaded/imagesloaded.pkgd.js';
 // const imagesLoaded = require('imagesloaded');
 
 // Linear interpolation
