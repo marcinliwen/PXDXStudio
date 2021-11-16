@@ -1,6 +1,3 @@
-// import { gsap } from 'gsap';
-import gsap from '../../../node_modules/gsap/dist/gsap.js';
-
 export default class GalleryItem {
     constructor(el) {
         this.DOM = {el: el};

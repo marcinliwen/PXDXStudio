@@ -2,7 +2,6 @@
 import GalleryController from './galleryController.js';
 
 // Map number x from range [a, b] to [c, d]
-// import { imagesLoaded } from '../../../node_modules/imagesloaded/imagesloaded.pkgd.js';
 
 // Preload images
 const preloadImages = (selector = 'img') => {
