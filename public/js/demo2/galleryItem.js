@@ -1,5 +1,3 @@
-import { gsap } from 'gsap';
-
 export default class GalleryItem {
     constructor(el) {
         this.DOM = {el: el};

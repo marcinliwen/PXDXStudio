@@ -1,8 +1,7 @@
-import { gsap } from 'gsap';
-import { calcWinsize, getRandomInteger } from '../utils';
-import GalleryItem from './galleryItem';
-import LocomotiveScroll from 'locomotive-scroll';
-import Splitting from "splitting";
+// import { gsap } from 'gsap';
+import { calcWinsize, getRandomInteger } from '../utils.js';
+import GalleryItem from './galleryItem.js';
+import Splitting from '../../../node_modules/splitting/dist/splitting.min.js';
 
 Splitting();
 

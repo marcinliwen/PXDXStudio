@@ -1,9 +1,5 @@
-import { gsap } from 'gsap';
-import { calcWinsize } from '../utils';
-import GalleryItem from './galleryItem';
-import LocomotiveScroll from 'locomotive-scroll';
-import Splitting from "splitting";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { calcWinsize } from '../utils.js';
+import GalleryItem from './galleryItem.js';
 
 // Call the splittingjs to transform the data-splitting texts to spans of chars 
 Splitting();

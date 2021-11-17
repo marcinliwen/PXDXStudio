@@ -1,8 +1,3 @@
-import LocomotiveScroll from 'locomotive-scroll';
-
-// Map number x from range [a, b] to [c, d]
-const imagesLoaded = require('imagesloaded');
-
 // Preload images
 const preloadImages = (selector = 'img') => {
     return new Promise((resolve) => {
