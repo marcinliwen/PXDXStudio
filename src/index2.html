@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head>
-		<meta charset="UTF-8" />
+		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>PXDX STUDIO | 2020 | Copyrights</title>
-		<meta name="description" content="Creative studio for your ideas." />
-		<meta name="keywords" content="ux, ux design, ui, animation, uidesign, inspiration, web design" />
-		<meta name="author" content="Sara Matracka" />
+		<meta name="description" content="Creative studio for your ideas."/>
+		<meta name="keywords" content="ux, ux design, ui, animation, uidesign, inspiration, web design"/>
+		<meta name="author" content="Sara Matracka"/>
 		<link rel="shortcut icon" href="favicon.ico">
 		<link rel="stylesheet" href="https://use.typekit.net/qcs2tck.css">
-		<link rel="stylesheet" type="text/css" href="../public/css/base.css" />
-		<link rel="stylesheet" type="text/css" href="../public/css/demo2.css" />
-		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+		<link rel="stylesheet" type="text/css" href="../public/css/base.css">
+		<link rel="stylesheet" type="text/css" href="../public/css/demo2.css"/>
+		<script>document.documentElement.className = "js";
+		var supportsCssVars = function () {
+			var e, t = document.createElement("style");
+			return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e
+		};
+		supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
 		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-		<!-- <script src="//tympanus.net/codrops/adpacks/analytics.js"></script> -->
 	</head>
 	<body class="loading noscroll">
 		<main data-scroll-container>
@@ -96,7 +100,15 @@
 		<svg class="cursor" width="30" height="30" viewBox="0 0 30 30">
 			<circle class="cursor__inner" cx="15" cy="15" r="7.5"/>
 		</svg>
-		<script src="../public/js/demo2/index.js"></script>
-		<script src="https://tympanus.net/codrops/adpacks/cda.js"></script>
+		<script src="../node_modules/imagesloaded/imagesloaded.pkgd.min.js"></script>
+		<script src="../node_modules/locomotive-scroll/dist/locomotive-scroll.min.js"></script>
+		<script src="../node_modules/splitting/dist/splitting.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+
+		<script type="module" src="../public/js/utils.js"></script>
+		<script type="module" src="../public/js/cursor.js"></script>
+		<script type="module" src="../public/js/demo2/index.js"></script>
 	</body>
 </html>
