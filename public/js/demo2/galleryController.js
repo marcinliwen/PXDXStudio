@@ -21,6 +21,7 @@ export default class GalleryController {
             galleryEl: galleryEl,
             title: document.querySelector('.content__title'),
             text: document.querySelector('.content__text'),
+            logo: document.querySelector('#gallery-logo'),
         };
         this.DOM.galleryItemElems = [...this.DOM.galleryEl.querySelectorAll('.gallery__item')];
         this.galleryItems = [];
@@ -74,9 +75,12 @@ export default class GalleryController {
         timeline
         .addLabel('startAnimation', '+=0.1')
         .add(() => {
-            document.body.classList.remove('noscroll');
+            // document.body.classList.remove('noscroll');
             scroll.update();
         }, 'startAnimation')
+            .to(this.DOM.logo, {
+                display: 'none',
+            })
 
         .to([firstImage,secondImage,thirdImage], {
             duration: 1.2,
