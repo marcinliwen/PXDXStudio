@@ -68,6 +68,10 @@ body, html {
     padding-bottom: 140%;
 }
 
+.gallery__item-imginner:first-child {
+    background-size: contain;
+}
+
 .gallery__item-caption {
     grid-area: gallery-caption;
     /*padding: 0 0 1rem;*/
@@ -169,7 +173,7 @@ body, html {
 .copyrights {
     text-align: right;
     width: 20%;
-    /*align-self: end;*/
+    align-self: flex-end;
 }
 
 .hero-subtext {
