@@ -61,16 +61,26 @@ body, html {
     opacity: 0;
 }
 
-.gallery__item-imginner {
+.gallery__item-imginner:first-child {
+    background-size: auto;
+    background-position: 50% 0%;
+    width: 100%;
+    padding-bottom: 140%;
+    padding-top: 5%;
+    background-repeat: no-repeat;
+}
+
+.gallery__item-imginner:not(:first-child) {
     background-size: cover;
     background-position: 50% 0;
     width: 100%;
     padding-bottom: 140%;
+    background-repeat: no-repeat;
 }
 
-.gallery__item-imginner:first-child {
-    background-size: contain;
-}
+/*.gallery__item-imginner:last-child {*/
+/*    background-size: contain;*/
+/*}*/
 
 .gallery__item-caption {
     grid-area: gallery-caption;
@@ -159,6 +169,7 @@ body, html {
     position: absolute;
     /*height: 100vh;*/
     bottom: 0;
+    z-index: 98;
 }
 
 .nodisplay {
@@ -281,3 +292,64 @@ body, html {
         padding: 0 0 0 1rem;
     }
 }
+
+.logotype {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 12%;
+    position: sticky;
+    z-index: 9;
+    opacity: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.6em;
+    font-size: 72px;
+    margin-right: -0.6em;
+}
+
+.and {
+    font-size: 24px;
+    margin-top: 24px;
+}
+
+/*.logotype:after {*/
+/*    content: ' ';*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    background: transparent;*/
+/*    transform-origin: 100% 0%;*/
+/*    z-index: 99;*/
+/*}*/
+.fade-in-bottom {
+    -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes fade-in-bottom {
+    0% {
+        -webkit-transform: translateY(50px);
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-bottom {
+    0% {
+        -webkit-transform: translateY(50px);
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+

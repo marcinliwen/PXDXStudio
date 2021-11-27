@@ -55,19 +55,20 @@ export default class GalleryController {
             timeline.set(item.DOM.img, {
                 x: winsize.width / 2 - item.imgRect.left - item.imgRect.width / 2,
                 y: winsize.height / 2 - item.imgRect.top - item.imgRect.height / 2,
-                // scale: 0.85,
+                scale: 1,
                 // rotation: getRandomInteger(-10,10),
                 opacity: 1,
-                delay: 0.5 * pos
+                delay: 0.6 * pos
             }, 0);
 
             // for the first image, we set a high scale for the inner image element
             // later we will animate this scale value together with the scale value of the outer image
-            // if ( pos === 0 ) {
-            //     timeline.set(item.DOM.imgInner, {
-            //         scale: 1.8
-            //     }, 0);
-            // }
+            if ( pos === 0 ) {
+                timeline.set(item.DOM.imgInner, {
+                    // scale: 1.8
+                    backgroundSize: 'contain'
+                }, 0);
+            }
         }
 
         // access the first and other images in the stack
@@ -78,8 +79,10 @@ export default class GalleryController {
         const galleryItemCaption = document.querySelector('.gallery__item-caption');
         const frame = document.querySelector('.frame');
         const hiddenElement = document.querySelector('.hidden-element');
+        const logotype = document.querySelector('.logotype');
         const heroImg = document.getElementById('#hero-image');
         const heroImgWrapper = document.getElementById('#hero-bg-wrapper');
+        const rule = CSSRulePlugin.getRule('.logotype:after');
 
         timeline
             .addLabel('startAnimation', '+=0')
@@ -89,23 +92,25 @@ export default class GalleryController {
                 scroll.update();
             }, 'startAnimation')
             .to(this.DOM.logo, {
-                display: 'none',
+                opacity: 1,
+                // display: 'none',
+                duration: 0,
             }, 'startAnimation')
 
             // animate the main title characters out and fade them out too
             .to(this.DOM.titleChars, {
                 duration: 1,
                 ease: 'expo',
-                display: 'none',
-                // x: (pos, target) => {
-                //     return -40*(Math.floor(this.titleCharsTotal/2)-pos);
-                // },
-                // y: -1500,
-                // opacity: 0,
-                // stagger: {from: 'center'}
+                // display: 'none',
+                x: (pos, target) => {
+                    return -40*(Math.floor(this.titleCharsTotal/2)-pos);
+                },
+                opacity: 0,
+                translateY: -50,
+                stagger: {from: 'center'}
             }, 'startAnimation')
             .set(firstImage, {maxWidth: '100%'})
-            .set(heroImg, {backgroundSize: 'contain'})
+            .to(heroImg, {duration: 1, backgroundSize: 'auto'})
             .set(galleryItemCaption, {display: 'none'})
             // .set('.hero-subtext', { display: 'none'})
 
@@ -165,30 +170,34 @@ export default class GalleryController {
 
             .to(galleryItem, {
                 position: 'absolute',
+                top: 0,
                 display: 'flex',
                 margin: 0,
                 // duration: 6.2,
-                ease: 'expo',
-                // x: 0,
-                // y: 0,
+                // ease: 'power3',
+                // x: winsize.width / 2,
+                // y: winsize.height / 2,
+
                 width: '100vw',
                 height: '100vh',
                 // scale: 5,
                 rotation: 0,
-                opacity: 1
+                opacity: 1,
+                duration: 3
             }, 'startAnimation')
             .to(frame, {
                 opacity: 1,
-                duration: 2,
-                ease: 'expo',
+                duration: 3,
+                ease: 'power0',
+                y: 10,
             }, 'startAnimation')
             .to(hiddenElement, {
-                opacity: 1,
-                duration: 5,
-                ease: 'expo',
-                zIndex: 999,
+                opacity:1,
+                duration:1,
+                translateY: -20,
+                delay: 2,
             }, 'startAnimation')
-        // .set( fra)
+            .to(logotype, { duration: 3, opacity: 1, translateY: -50, delay: 2}, 'startAnimation')
         // both the image and inner image animate the scale value to achieve the "reveal effect"
         // .to(this.galleryItems[0].DOM.imgInner, {
         //     duration: 1.2,
